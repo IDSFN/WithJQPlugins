@@ -9,3 +9,68 @@ body {
 /*=====  End of Basic styling  ======*/
 
 
+/*======================================
+=            Header styling            =
+======================================*/
+
+header {
+   width: 100vw;
+   height: 100vh;
+   background-color: #3b3a36;
+   color: #e9ece5;
+   text-transform: uppercase;
+   letter-spacing: 0.1em;
+}
+
+header span {
+   font-size: 3.6em;
+   font-weight: 300;
+   display: block;
+}
+
+header em {
+   font-weight: 900;
+}
+
+.headerText {
+   padding: 1em;
+}
+
+/*=====  End of Header styling  ======*/
+
+
+/*===============================
+=            Modules            =
+===============================*/
+
+.centerVH {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+}
+
+/*=====  End of Modules  ======*/
+
+
+/*=====================================
+=            Media queries            =
+=====================================*/
+
+@media (min-width: 512px) {
+   .headerText {
+      text-align: center;
+   }
+
+   header span {
+      font-size: 4em;
+   }
+}
+
+@media (min-width: 930px) {
+   header span {
+      font-size: 4.4em;
+   }
+}
+
+/*=====  End of Media queries  ======*/
