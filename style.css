@@ -50,6 +50,11 @@ canvas {
    display: none;
 }
 
+.circleDown {
+   display: none;
+}
+
+
 /*=====  End of Header styling  ======*/
 
 
@@ -110,6 +115,24 @@ canvas {
    header span {
       font-size: 4.4em;
    }
+
+   .circleDown {
+      display: inline-block;
+      position: absolute;
+      bottom: 5%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 3em;
+      font-weight: 300;
+      cursor: pointer;
+      transition: all 0.8s cubic-bezier(0.97,-0.43, 0, 1.94);
+   }
+
+   .circleDown:hover {
+      color: #c0dfd9;
+      bottom:3%;
+   }
+
 }
 
 /*=====  End of Media queries  ======*/
