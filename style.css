@@ -54,9 +54,114 @@ canvas {
    display: none;
 }
 
+.prev, .next {
+   display: none;
+}
+
+.ANDD {
+   margin: -0.2em 0;
+}
 
 /*=====  End of Header styling  ======*/
 
+/*=====================================
+=            Media queries            =
+=====================================*/
+
+@media only screen and (min-width: 512px) {
+   .headerText {
+      text-align: center;
+   }
+
+   header span {
+      font-size: 4em;
+   }
+
+   .circleDown {
+      bottom: 1%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 3em;
+      font-weight: 300;
+   }
+
+   .circleDown:hover {
+      bottom:0;
+   }
+
+   .prev {
+      left: 1%;
+   }
+
+   .prev:hover {
+      left: 0.5%;
+   }
+
+   .next {
+      right: 1%;
+   }
+
+   .next:hover {
+      right: 0.5%;
+   }
+
+   .prev, .next {
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2em;
+   }
+
+   .prev, .next, .circleDown {
+      display: block;
+      position: absolute;
+      cursor: pointer;
+      transition: all 0.5s ease-in-out;
+      opacity: 0;
+   }
+
+   .prev:hover, .next:hover, .circleDown:hover {
+      color: #c0dfd9;
+      opacity: 0.8;
+   }
+
+   .flash {
+      display: none;
+      opacity: 0.5;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 3;
+      background-color: #e9ece5;
+   }
+
+   /*.imageText {
+      width: 100%;
+      height: 100%;
+      background-color: black;
+   }*/
+}
+
+@media only screen and (min-width: 800px) {
+   canvas {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 1;
+   }
+}
+
+@media only screen and (min-width: 930px) {
+   header span {
+      font-size: 4.4em;
+   }
+}
+
+/*=====  End of Media queries  ======*/
 
 /*===============================
 =            Modules            =
@@ -83,56 +188,3 @@ canvas {
 }
 
 /*=====  End of Modules  ======*/
-
-
-/*=====================================
-=            Media queries            =
-=====================================*/
-
-@media only screen and (min-width: 512px) {
-   .headerText {
-      text-align: center;
-   }
-
-   header span {
-      font-size: 4em;
-   }
-}
-
-@media only screen and (min-width: 800px) {
-   canvas {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      opacity: 1;
-   }
-}
-
-@media only screen and (min-width: 930px) {
-   header span {
-      font-size: 4.4em;
-   }
-
-   .circleDown {
-      display: inline-block;
-      position: absolute;
-      bottom: 5%;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 3em;
-      font-weight: 300;
-      cursor: pointer;
-      transition: all 0.8s cubic-bezier(0.97,-0.43, 0, 1.94);
-   }
-
-   .circleDown:hover {
-      color: #c0dfd9;
-      bottom:3%;
-   }
-
-}
-
-/*=====  End of Media queries  ======*/
