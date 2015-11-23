@@ -12,14 +12,39 @@
 <body>
    <!-- Header -->
    <header class="centerVH">
-      <div class="headerText">
+      <nav class="">
+         <i class="fa fa-plus nav-btn"></i>
+          <ul>
+              <li><a href="#">Home</a></li><!--
+           --><li><a href="#">Portfolio</a></li><!--
+           --><li><a href="#">Blog</a></li><!--
+           --><li><a href="#">Contact</a></li>
+          </ul>
+      </nav>
+
+      <div class="headerText centerVH first">
          <span>I lead to</span>
          <span>meaningful <em>brands</em></span>
          <span class="ANDD"><em>&</em></span>
          <span>creative <em>arts</em></span>
       </div>
 
-      <div class="imageText"></div>
+      <div class="imageText">
+         <span><em>Everything</em></span>
+         <span>you can <em>imagine</em></span>
+         <span>Is <em>Real</em></span>
+      </div>
+
+      <div class="videoText last">
+         <video autoplay loop muted>
+            <source src="imgs/vid1.mp4" type="video/mp4">
+         </video>
+         <div class="textVV centerVH">
+            <span><em>I'm</em> here</span>
+            <span>to live out</span>
+            <span><em>loud</em></span>
+         </div>
+      </div>
 
       <canvas></canvas>
       
@@ -28,6 +53,38 @@
       <i class="fa fa-angle-down circleDown"></i>
       <div class="flash"></div>
    </header>
+
+   <!-- Container -->
+   <div class="container">
+      <div class="imgslider"></div>
+      <div class="texto centerVH">
+         <h2>Heading text here.</h2>
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+         <a href="#">Learn more</a>
+      </div>
+   </div>
+
+   <div class="features">
+      <div class="col1 centerVH">
+         <i class="fa fa-industry"></i>
+         <h3>Feature1</h3>
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis sint perferendis, velit natus. Alias neque nihil doloremque iusto. </p>
+         <a href="#">Learn more</a>
+      </div>
+      <div class="col2 centerVH">
+         <i class="fa fa-500px"></i>
+         <h3>Feature2</h3>
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis sint perferendis, velit natus. Alias neque nihil doloremque iusto. </p>
+         <a href="#">Learn more</a>
+      </div>
+      <div class="col3 centerVH">
+         <i class="fa fa-gg"></i>
+         <h3>Feature3</h3>
+         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis sint perferendis, velit natus. Alias neque nihil doloremque iusto. </p>
+         <a href="#">Learn more</a>
+      </div>
+   </div>
+
 
    <!-- Include my magic script -->
    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>

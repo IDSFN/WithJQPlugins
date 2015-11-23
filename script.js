@@ -40,7 +40,47 @@ if (window.matchMedia('only screen and (min-width: 800px)').matches) {
 /*==================================================
 =            fancy shit to the header               =
 ==================================================*/
+var left = $('.prev');
+var right = $('.next');
+var down = $('.circleDown');
 var desktopWidth = window.matchMedia('only screen and (min-width: 512px)').matches;
+
+function whereAmi() {
+   return $('header').children('div').filter(function(index, el) {
+      return $(this).css('display') !== 'none'
+   });
+}
+
+right.click(function() {
+   var pos = whereAmi();
+   var weDesktop = window.matchMedia('only screen and (min-width: 512px)').matches;
+
+   if (!pos.hasClass('last') && weDesktop) {
+      pos.css('display', 'none');
+      pos.next().css('display', 'flex');
+      if (pos.next().hasClass('last')) {
+         $(window).on({
+            scroll: function() {
+               left.click();
+               left.click();
+               $(this).off()
+            }
+         });
+      }
+   }
+});
+
+left.click(function() {
+   var pos = whereAmi();
+   var weDesktop = window.matchMedia('only screen and (min-width: 512px)').matches;
+
+   if (!pos.hasClass('first') && weDesktop) {
+      pos.css('display', 'none');
+      pos.prev().css('display', 'flex');
+   }
+});
+
+
 $(window).resize(function() {
    desktopWidth = window.matchMedia('only screen and (min-width: 512px)').matches;
 
@@ -53,17 +93,14 @@ if (desktopWidth) {
       mousemove: function(event) {
          var mouseX = (event.pageX / screen.width) * 100;
          var mouseY = (event.pageY / screen.height) * 100;
-         var left = $('.prev');
-         var right = $('.next');
-         var down = $('.circleDown');
 
-         if (mouseX <= 10)
+         if (mouseX <= 15)
             left.css('opacity', 0.4);
 
-         else if (mouseX >= 60)
+         else if (mouseX >= 80)
             right.css('opacity', 0.4);
 
-         else if (mouseY >= 60)
+         else if (mouseY >= 70)
             down.css('opacity', 0.8);
 
          else {
@@ -79,3 +116,23 @@ if (desktopWidth) {
       }
    });
 }
+
+// Show and hide the header nav menu
+$('.nav-btn').click(function () {
+   var $this = $(this);
+   var $menu = $this.next();
+
+   if ($this.hasClass('fa-plus')) {
+      $this.removeClass('fa-plus').addClass('fa-minus');
+      $menu.fadeIn(500);
+   }
+   else {
+      $this.removeClass('fa-minus').addClass('fa-plus');
+      $menu.fadeOut(300);
+   }
+});
+
+
+/*=================================
+=            container            =
+=================================*/

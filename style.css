@@ -13,6 +13,7 @@ html, body {
 
 body {
    font-family: 'Open Sans', sans-serif;
+   background-color: #e9ece5;
 }
 
 /*=====  End of Basic styling  ======*/
@@ -23,7 +24,7 @@ body {
 ======================================*/
 
 header {
-   width: 100vw;
+   width: 100%;
    height: 100vh;
    background-color: #3b3a36;
    color: #e9ece5;
@@ -32,7 +33,7 @@ header {
    position: relative;
 }
 
-header span {
+.headerText span {
    font-size: 3.6em;
    font-weight: 300;
    display: block;
@@ -60,6 +61,154 @@ canvas {
 
 .ANDD {
    margin: -0.2em 0;
+}
+
+.imageText, .videoText {
+   display: none;
+}
+
+header nav {
+   position: absolute;
+   top: 1%;
+   right: 2%;
+   left: -10%;
+   z-index: 3;
+}
+
+.nav-btn {
+   font-size: 2em;
+   margin-left: 94%;
+   opacity: 0.2;
+   transition: all 0.3s ease-in-out;
+}
+
+.nav-btn:hover {
+   cursor: pointer;
+   opacity: 0.8;
+}
+
+nav ul {
+   text-align: center;
+   margin: 0;
+   padding: 0;
+   list-style: none;
+   display: none;
+}
+
+nav li {
+   display: inline-block;
+   margin-right: 4%;
+}
+
+nav li:last-child {
+   margin-right: 0;
+}
+
+nav a {
+   text-decoration: none;
+   color: #e9ece5;
+}
+
+nav a:hover {
+   text-decoration: underline;
+   color: #c0dfd9;
+}
+
+/**
+ *
+ * Container
+ *
+ */
+
+.container {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   color: #3b3a36;
+   position: relative;
+   z-index: 2;
+}
+
+.texto {
+   padding: 0 2%;
+   line-height: 1.8em;
+}
+
+.texto h2, .texto p {
+   align-self: flex-start;
+   margin-bottom: 0;
+}
+
+.texto a {
+   color: #3b3a36;
+   text-decoration: none;
+   padding: 1% 2%;
+   opacity: 0.5;
+   transition: all 0.3s ease-in-out;
+   font-weight: bold;
+   align-self: flex-end;
+}
+
+.texto a:hover {
+   opacity: 1;
+}
+
+.imgslider {
+   width: 100%;;
+   height: 20em;
+   background: url('imgs/s2.jpg') no-repeat center center fixed;
+   background-size: cover;
+}
+
+/**
+ *
+ * Features
+ *
+ */
+.features {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   width: 100%;
+   color: #3b3a36;
+   margin: 0 0 2%;
+   line-height: 1.5em;
+}
+
+.col1, .col2, .col3 {
+   background-color: #c0dfd9;
+   margin-bottom: 1%;
+   padding: 3% 2%;
+   opacity: 0.8;
+   transition: all 0.2s ease-in-out;
+}
+
+.col1:hover, .col2:hover, .col3:hover {
+   opacity: 1;
+}
+
+.features h3 {
+   margin-bottom: 1%;
+}
+.features i {
+   font-size: 5em;
+   color: #3b3a36;
+}
+
+.features a {
+   align-self: flex-end;
+   color: #3b3a36;
+   text-decoration: none;
+   margin-right: 2%;
+   font-size: 0.95em;
+}
+
+.features a:hover {
+   text-decoration: underline;
 }
 
 /*=====  End of Header styling  ======*/
@@ -136,11 +285,44 @@ canvas {
       background-color: #e9ece5;
    }
 
-   /*.imageText {
+   .imageText {
       width: 100%;
       height: 100%;
-      background-color: black;
-   }*/
+      background: url(imgs/img1.jpg) no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      display: none;
+   }
+
+   .imageText span {
+      display: inline-block;
+      line-height: 1em;
+   }
+
+   header nav {
+      left: 0;
+   }
+}
+@media only screen and (min-width: 700px) {
+   .features {
+      margin: 0 0 0.5%;
+   }
+
+   .features i {
+      font-size: 6em;
+   }
+
+   .features h3 {
+      font-size: 1.75em;
+   }
+
+   .features a {
+      font-size: 1em;
+   }
 }
 
 @media only screen and (min-width: 800px) {
@@ -153,11 +335,68 @@ canvas {
       bottom: 0;
       opacity: 1;
    }
+
+   header nav {
+      left: 40%;
+   }
+
+   .container {
+      flex-direction: row;
+   }
+   .imgslider, .texto {
+      width: 50%;
+   }
+
+   .features {
+      flex-direction: row;
+   }
+
+   .col1, .col2 {
+      width: 50%;
+   }
+
+   .col3 {
+      width: 100%;
+   }
 }
 
 @media only screen and (min-width: 930px) {
    header span {
       font-size: 4.4em;
+   }
+
+   .videoText {
+      text-align: center;
+   }
+
+   .videoText video {
+      min-width: 100%;
+      min-height: 100%;
+
+      z-index: 0;
+   }
+
+   .textVV {
+      z-index: 1;
+   }
+
+   .textVV, .videoText video {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+   }
+
+   .textVV span {
+      font-size: 6em;
+   }
+
+   header nav {
+      left: 60%;
+   }
+   .col1, .col2, .col3 {
+      width: 33.3%;
+      
    }
 }
 
@@ -185,6 +424,13 @@ canvas {
    -webkit-flex-direction: column;
        -ms-flex-direction: column;
            flex-direction: column;
+}
+
+.cf,
+cf:after {
+   content: '';
+   display: table;
+   clear: both;
 }
 
 /*=====  End of Modules  ======*/
